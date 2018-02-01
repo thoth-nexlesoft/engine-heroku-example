@@ -4,9 +4,6 @@
     {
       "http": {
         "url": "https://githunt-ruby.herokuapp.com/graphql",
-        "rewriteHeaders": {
-          "Host": "githunt-ruby.herokuapp.com"
-        }
       }
     }
   ],
