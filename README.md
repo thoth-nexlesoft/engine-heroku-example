@@ -9,7 +9,7 @@ cd engine-heroku-example
 ```
 
 Then edit the `config-template.json` file with the configuration specific to your environment.
-Note that `origins.http.rewriteHeaders.Host` MUST also be set to the origin hostname so Heroku's virtual hosting system can properly route to the origin.
+Note that `origins.http.overrideRequestHeaders.Host` MUST also be set to the origin hostname so Heroku's virtual hosting system can properly route to the origin.  If you leave out this override, Engine proxy will end up in a circular connection loop and eventually crash.
 
 Heroku requires support for runtime configuration of the port that Engine listens on.  This is exposed to the container via the $PORT environment variable.  This example includes a template script that allows you to rewrite the config when the container runs in a Heroku (or similar) environment.
 

@@ -3,7 +3,10 @@
   "origins": [
     {
       "http": {
-        "url": "https://githunt-ruby.herokuapp.com/graphql",
+        "url": "https://yourappname.herokuapp.com/graphql",
+        "overrideRequestHeaders": {
+          "Host": "yourappname.herokuapp.com"
+        }
       }
     }
   ],
