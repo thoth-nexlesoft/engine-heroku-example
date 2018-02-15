@@ -1,7 +1,7 @@
 # Use multi-stage build process to build this container:
 # layer 0: Engine Proxy base image.
 # Grab the latest version from here: https://www.apollographql.com/docs/engine/proxy-release-notes.html
-FROM gcr.io/mdg-public/engine:2018.01-54-gce490265c as engine
+FROM gcr.io/mdg-public/engine:2018.02-50-gef2fc6d4e as engine
 
 # layer 1: Alpine Linux base image (to get support for shell scripting)
 FROM alpine:3.6

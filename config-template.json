@@ -1,11 +1,11 @@
 {
-  "apiKey": "${API_KEY}",
+  "apiKey": "<YOUR_API_KEY_HERE>",
   "origins": [
     {
       "http": {
         "url": "https://yourappname.herokuapp.com/graphql",
         "overrideRequestHeaders": {
-          "Host": "yourappname.herokuapp.com"
+          "Host": "<yourappname.herokuapp.com>"
         }
       }
     }
@@ -13,13 +13,19 @@
   "frontends": [
     {
       "host": "0.0.0.0",
-      "port": ${PORT},
+      "portFromEnv": "PORT",
       "endpoint": "/graphql"
     }
   ],
   "stores": [
     {
       "name": "embeddedCache",
+      "inMemory": {
+        "cacheSize": 10485760
+      }
+    },
+    {
+      "name": "pq",
       "inMemory": {
         "cacheSize": 10485760
       }
@@ -32,6 +38,9 @@
   "queryCache": {
     "publicFullQueryStore": "embeddedCache",
     "privateFullQueryStore": "embeddedCache"
+  },
+  "persistedQueries": {
+    "store": "pq"
   },
   "logging": {
     "level": "DEBUG"
